@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  width: 400px;  
+  margin: 0 auto;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2.6rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
+  text-align: center;
+  margin: 20px 0;
+  color: red
+}
+
+h1 span {
+  color: #333
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray
+}
+
+form > input {
+  width: 90%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1rem 1rem;
+}
+
+form > input:focus{  
+  border-bottom: 2px solid tomato
+}
+
+form > button {
+  border: none;
+  background-color: transparent;
+  color: tomato;
+  font-size: 1rem;
+  line-height: 2;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+
+}
+
+form > button:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+form + .message {
+  color: red;
+  font-size: 1.1rem;
+  padding-left: 10px;
+  margin-top: 3px;
+  transition: all 9ms ease;
+  opacity: 0;
+}
+
+.message.show{
+  opacity: 1
+}
+
+li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  background: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+
+li::before {
+  content: attr(data-n);
+  position: absolute;
+  left: 10px;
+  top: 3px;
+  color: lightgray;
+  font-size: 1.2rem;
+}
+
+li:hover {
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+}
+
+li > .delete{
+  background: tomato;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.4rem;
+  top: -100px;
+  opacity: 0;
+  transition: all .5s ease-out;
+}
+
+.delete.active {
+  top: 0;
+  opacity: 1
+}
+
+.delete span {
+  flex-grow: 1;
+}
+
+.delete button{
+  font-size: 1.4rem;
+  opacity: .8;
+}
+
+.delete button:hover{
+  opacity: 1;
+}
+
+.animate{
+  animation: exists .2s 1
+}
+
+@keyframes exists {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, .4);
+  }
+
+  50% {
+      -webkit-box-shadow: 0 0 0 20px rgba(255,0, 0, 0);
+      transform: scale(.98)
+  }
+}
+
+li span {
+  display: inline-block;
+  width: 60%;
+  padding-left: 1rem;
+}
+
+li button {
+  font-size: 2rem;
+  border: none;
+  background-color: tomato;
+  padding: 1rem 1.5rem;
+  color: white;
+  height: 100%;
+}
+
+li button.remove{
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+li button.remove:hover {
+  background-color: red
+}
+li button.incomplete {
+  background-color: whitesmoke;
+  color: lightgray
+}
+
+li button.incomplete:hover {
+  color: gray
+}
+
+li button.completed {
+  background-color: #4caf50;
+  color: white;
+}
+li button.completed:hover {
+  background-color: rgb(3, 158, 3)
+}
+
+li > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.quantity {
+  display: inline-flex;
+  align-items: center;
+}
+
+.quantity input {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+.quantity .buttons {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.quantity button {
+  display: block;
+  width: 100%;
+  padding: 0 .5rem;
+  background-color: transparent;
+  color: gray
+}
+
+.quantity button:hover {
+  color: tomato
+}
