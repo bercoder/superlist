@@ -184,9 +184,11 @@ li button.remove{
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
 li button.remove:hover {
   background-color: red
 }
+
 li button.incomplete {
   background-color: whitesmoke;
   color: lightgray

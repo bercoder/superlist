@@ -1,4 +1,5 @@
 import React from 'react'
+import { iList } from '../../types'
 
 interface Form extends HTMLFormElement {
   product: HTMLInputElement
@@ -19,7 +20,9 @@ export const NewItem: React.FC<Props> = ({ add }) => {
       e.target.product.focus()
       return
     }
+
     const added = add(value)
+
     if (added) e.target.reset()
     else {
       e.target.product.focus()
@@ -32,7 +35,7 @@ export const NewItem: React.FC<Props> = ({ add }) => {
     <>
       <h2>Add product</h2>
       <form onSubmit={handleSubmit}>
-        <input autoFocus type="search" name="product" placeholder="Add a new product" />
+        <input autoFocus type="search" name="product" placeholder="Add a new product"  />
         <button title="Add the product to the list">ADD</button>
       </form>
       <div className={`message ${message !== '' && 'show'}`}>{message}</div>

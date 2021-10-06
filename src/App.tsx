@@ -26,7 +26,7 @@ function App() {
         loading
         ? <p>Loading...</p>
         : <>
-        <NewItem add={handleAdd}/>
+        <NewItem add={handleAdd} />
         <List edit={edit} toggle={toggle} remove={remove} list={list} animate={animation} endAnimation={() => setAnimation(null)}/>
       </>}
     </main>
